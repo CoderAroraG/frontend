@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./LeadList.css"; // Import your CSS
+import "./LeadList.css"; // Import your stylish CSS
 
 export default function LeadList() {
   const [leads, setLeads] = useState([]);
@@ -12,8 +12,7 @@ export default function LeadList() {
   async function fetchLeads() {
     setLoading(true);
     try {
-      // ✅ Updated backend URL
-      const res = await fetch("https://leadtest-f5zr.onrender.com/api/leads");
+      const res = await fetch("https://leadtest-f5zr.onrender.com/api/leads"); 
       const data = await res.json();
       setLeads(Array.isArray(data) ? data : []);
     } catch (err) {
@@ -27,13 +26,12 @@ export default function LeadList() {
   async function handleCall(index) {
     const lead = leads[index];
     if (lead && lead.phone) {
-      window.location.href = `tel:${lead.phone}`;
+      window.location.href = `tel:${lead.phone}`; // Phone button acts as call
     }
 
     try {
-      // ✅ Updated backend URL
-      await fetch(`https://leadtest-f5zr.onrender.com/api/update-call/${index}`, { method: "POST" });
-      fetchLeads();
+      await fetch(`https://leadtest-f5zr.onrender.com/api/update-call/${index}`, { method: "POST" }); // ✅ Local backend
+      fetchLeads(); // Refresh after update
     } catch (err) {
       console.error("Update call error:", err);
     }
@@ -73,12 +71,17 @@ export default function LeadList() {
               <tr key={i}>
                 <td>{lead.name || "-"}</td>
                 <td>
-                  <button className="phone-btn" onClick={() => handleCall(i)}>
+                  <button
+                    className="phone-btn"
+                    onClick={() => handleCall(i)}
+                  >
                     {lead.phone || "-"}
                   </button>
                 </td>
                 <td>{lead.nextCallDate || "-"}</td>
-                <td className={`status ${lead.status?.toLowerCase()}`}>{lead.status || "-"}</td>
+                <td className={`status ${lead.status?.toLowerCase()}`}>
+                  {lead.status || "-"}
+                </td>
                 <td>{lead.lastCalled || "-"}</td>
                 <td>{lead.followUps || "0"}</td>
                 <td className="followup-cell">{lead.followUpDates || "-"}</td>

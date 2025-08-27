@@ -1,5 +1,6 @@
 import React from "react";
 import LeadList from "./LeadList";
+import "./LeadList.css";
 
 function App() {
   return (

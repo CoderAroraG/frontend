@@ -1,65 +1,132 @@
+/* Container */
 .lead-container {
-  width: 90%;
-  margin: 20px auto;
-  font-family: Arial, sans-serif;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fb;
+  min-height: 100vh;
 }
 
+/* Header */
 .lead-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
+.lead-header h2 {
+  color: #1f2937;
+  margin: 0;
+}
+
+/* Refresh Button */
 .refresh-btn {
-  padding: 6px 12px;
-  font-size: 14px;
+  padding: 8px 16px;
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
+  transition: 0.3s;
 }
 
+.refresh-btn:hover:not(:disabled) {
+  background: linear-gradient(90deg, #3730a3, #4f46e5);
+}
+
+.refresh-btn:disabled {
+  background-color: #a5b4fc;
+  cursor: not-allowed;
+}
+
+/* Table */
 .lead-table {
   width: 100%;
   border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
-.lead-table th,
-.lead-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
+.lead-table th, .lead-table td {
+  padding: 12px 10px;
   text-align: left;
 }
 
 .lead-table th {
-  background-color: #f4f4f4;
+  background-color: #eef2ff;
+  color: #1e3a8a;
+  font-weight: 600;
+  border-bottom: 2px solid #dbeafe;
 }
 
-.lead-table tr:nth-child(even) {
-  background-color: #f9f9f9;
+.lead-table td {
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
 }
 
+/* Row hover */
 .lead-table tr:hover {
-  background-color: #eaeaea;
+  background-color: #f3f4f6;
 }
 
+/* No leads message */
+.no-leads {
+  text-align: center;
+  padding: 16px;
+  font-style: italic;
+  color: #9ca3af;
+}
+
+/* Phone Button */
 .phone-btn {
   background: none;
   border: none;
-  color: blue;
-  text-decoration: underline;
+  color: #2563eb;
+  font-weight: 500;
   cursor: pointer;
+  text-decoration: underline;
+  transition: 0.2s;
+}
+
+.phone-btn:hover {
+  color: #1d4ed8;
+}
+
+/* Follow-Up Dates */
+.followup-cell {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Status colors */
+.status.pending {
+  color: #f59e0b;
+  font-weight: 600;
 }
 
 .status.called {
-  color: green;
-  font-weight: bold;
+  color: #10b981;
+  font-weight: 600;
 }
 
-.status.pending {
-  color: orange;
-  font-weight: bold;
+.status.other {
+  color: #6b7280;
+  font-weight: 600;
 }
 
-.no-leads {
-  text-align: center;
-  padding: 12px;
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .lead-table th, .lead-table td {
+    padding: 8px 6px;
+    font-size: 13px;
+  }
+
+  .followup-cell {
+    max-width: 120px;
+  }
 }

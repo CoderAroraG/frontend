@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./LeadList.css";
+import "./LeadList.css"; // Import your CSS
 
 export default function LeadList() {
   const [leads, setLeads] = useState([]);
@@ -12,6 +12,7 @@ export default function LeadList() {
   async function fetchLeads() {
     setLoading(true);
     try {
+      // ✅ Updated backend URL
       const res = await fetch("https://leadtest-f5zr.onrender.com/api/leads");
       const data = await res.json();
       setLeads(Array.isArray(data) ? data : []);
@@ -30,6 +31,7 @@ export default function LeadList() {
     }
 
     try {
+      // ✅ Updated backend URL
       await fetch(`https://leadtest-f5zr.onrender.com/api/update-call/${index}`, { method: "POST" });
       fetchLeads();
     } catch (err) {
@@ -76,9 +78,7 @@ export default function LeadList() {
                   </button>
                 </td>
                 <td>{lead.nextCallDate || "-"}</td>
-                <td className={`status ${lead.status?.toLowerCase()}`}>
-                  {lead.status || "-"}
-                </td>
+                <td className={`status ${lead.status?.toLowerCase()}`}>{lead.status || "-"}</td>
                 <td>{lead.lastCalled || "-"}</td>
                 <td>{lead.followUps || "0"}</td>
                 <td className="followup-cell">{lead.followUpDates || "-"}</td>

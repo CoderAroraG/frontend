@@ -1,0 +1,65 @@
+.lead-container {
+  width: 90%;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.lead-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.refresh-btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.lead-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.lead-table th,
+.lead-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.lead-table th {
+  background-color: #f4f4f4;
+}
+
+.lead-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.lead-table tr:hover {
+  background-color: #eaeaea;
+}
+
+.phone-btn {
+  background: none;
+  border: none;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.status.called {
+  color: green;
+  font-weight: bold;
+}
+
+.status.pending {
+  color: orange;
+  font-weight: bold;
+}
+
+.no-leads {
+  text-align: center;
+  padding: 12px;
+}

@@ -1,12 +1,10 @@
-/* Container */
 .lead-container {
   padding: 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f7fb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
   min-height: 100vh;
 }
 
-/* Header */
 .lead-header {
   display: flex;
   justify-content: space-between;
@@ -14,119 +12,98 @@
   margin-bottom: 20px;
 }
 
-.lead-header h2 {
-  color: #1f2937;
-  margin: 0;
-}
-
-/* Refresh Button */
 .refresh-btn {
   padding: 8px 16px;
-  background: linear-gradient(90deg, #4f46e5, #6366f1);
-  color: #fff;
+  background: #4CAF50;
+  color: white;
   border: none;
-  border-radius: 8px;
-  font-weight: 600;
+  border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.refresh-btn:hover:not(:disabled) {
-  background: linear-gradient(90deg, #3730a3, #4f46e5);
 }
 
 .refresh-btn:disabled {
-  background-color: #a5b4fc;
-  cursor: not-allowed;
+  background: #9e9e9e;
 }
 
-/* Table */
 .lead-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #fff;
+  background: white;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .lead-table th, .lead-table td {
   padding: 12px 10px;
+  border-bottom: 1px solid #ddd;
   text-align: left;
 }
 
 .lead-table th {
-  background-color: #eef2ff;
-  color: #1e3a8a;
+  background: #007BFF;
+  color: white;
   font-weight: 600;
-  border-bottom: 2px solid #dbeafe;
 }
 
-.lead-table td {
-  border-bottom: 1px solid #e5e7eb;
-  color: #374151;
-}
-
-/* Row hover */
 .lead-table tr:hover {
-  background-color: #f3f4f6;
+  background: #f1f1f1;
 }
 
-/* No leads message */
+.phone-btn {
+  background: none;
+  border: none;
+  color: #007BFF;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.next-call-input {
+  border: 1px solid #ccc;
+  padding: 4px 6px;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+.next-call-display {
+  font-weight: bold;
+}
+
+.remark-input {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 4px;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.remark-display {
+  margin-top: 4px;
+  font-size: 0.85em;
+  color: #555;
+  white-space: pre-line;
+}
+
+.status.called {
+  color: green;
+  font-weight: bold;
+}
+
+.status.pending {
+  color: orange;
+  font-weight: bold;
+}
+
 .no-leads {
   text-align: center;
   padding: 16px;
   font-style: italic;
-  color: #9ca3af;
+  color: #888;
 }
 
-/* Phone Button */
-.phone-btn {
-  background: none;
-  border: none;
-  color: #2563eb;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: underline;
-  transition: 0.2s;
-}
-
-.phone-btn:hover {
-  color: #1d4ed8;
-}
-
-/* Follow-Up Dates */
 .followup-cell {
   max-width: 200px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-/* Status colors */
-.status.pending {
-  color: #f59e0b;
-  font-weight: 600;
-}
-
-.status.called {
-  color: #10b981;
-  font-weight: 600;
-}
-
-.status.other {
-  color: #6b7280;
-  font-weight: 600;
-}
-
-/* Responsive for mobile */
-@media (max-width: 768px) {
-  .lead-table th, .lead-table td {
-    padding: 8px 6px;
-    font-size: 13px;
-  }
-
-  .followup-cell {
-    max-width: 120px;
-  }
 }
